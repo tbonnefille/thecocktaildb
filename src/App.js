@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./Components/Header/Header";
 import Home from "./Containers/Home/Home";
+import Alcoholic from './Containers/Alcoholic/Alcoholic';
+import NonAlcoholic from './Containers/NonAlcoholic/NonAlcoholic';
 import ByLetter from './Containers/ByLetter/ByLetter';
 import Ingredient from "./Containers/Ingredient/Ingredient";
 
@@ -16,29 +18,6 @@ import Error404 from './Containers/Error404/Error404';
 import Footer from "./Components/Footer/Footer";
 
 
-
-
-
-function App() {
-  return (
-
-<BrowserRouter>
-
-<Header />
-
-<Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/ByLetter/:letter" element={<ByLetter />} />
- 
-  <Route path="/Ingredient/:ingredientId" element={<Ingredient />} />
- 
-  <Route path="/SearchResults/:searchId" element={<SearchResults />} />
-  <Route path="/*" element={<Error404 />} />
-</Routes>
-
-<Footer />
-
-</BrowserRouter>
 
 /*
 <div>
@@ -96,6 +75,33 @@ function App() {
 
       </div>
 */
+
+
+function App() {
+  return (
+
+<BrowserRouter>
+
+<Header />
+
+<Routes>
+  <Route path="/" element={<Home />} />
+
+  <Route path="/Alcoholic" element={<Alcoholic />} />
+  <Route path="/NonAlcoholic" element={<NonAlcoholic />} />
+
+  <Route path="/ByLetter/:letter" element={<ByLetter />} />
+ 
+  <Route path="/Ingredient/:ingredientId" element={<Ingredient />} />
+ 
+  <Route path="/SearchResults/:searchId" element={<SearchResults />} />
+  <Route path="/*" element={<Error404 />} />
+</Routes>
+
+<Footer />
+
+</BrowserRouter>
+
       
   );
 
